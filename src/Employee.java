@@ -51,3 +51,4 @@ public class Employee {
         return "ID:" + Employee.id + ". Ф.И.О. - " +  lastName+ " " + firstName + " " + secondName + " Отдел: " + department + ". Зарплата: " + salary;
     }
 }
+// by Igor
