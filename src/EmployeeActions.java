@@ -3,7 +3,6 @@ public class EmployeeActions {
     public static void showAllEmployee(Employee[] employees) {
         for (Employee i : employees) {
             System.out.println(i);
-            Employee.id++;
         }
     }
 
@@ -19,30 +18,34 @@ public class EmployeeActions {
 
     public static void showMinSalaryEmployee(Employee[] employees) {
         int min = employees[0].getSalary();
+        int idEmployee = 0;
         for (int i = 0; i < employees.length; i++) {
             if (employees[i] != null) {
                 if (employees[i].getSalary() < min) {
                     min = employees[i].getSalary();
-                    Employee.id = i;
+                    idEmployee = i;
                 }
 
             }
         }
-        System.out.println("Минимальная зарплата сотрудника " + employees[Employee.id].getSecondName() + " " + employees[Employee.id].getFirstName() + " " + employees[Employee.id].getLastName() + " составляет " + min + " рублей. ");
+        assert employees[idEmployee] != null;
+        System.out.println("Минимальная зарплата сотрудника " + employees[idEmployee].getSecondName() + " " + employees[idEmployee].getFirstName() + " " + employees[idEmployee].getLastName() + " составляет " + min + " рублей. ");
     }
 
     public static void showMaxSalaryEmployee(Employee[] employees) {
         int max = employees[0].getSalary();
+        int idEmployee = 0;
         for (int i = 0; i < employees.length; i++) {
             if (employees[i] != null) {
                 if (employees[i].getSalary() > max) {
                     max = employees[i].getSalary();
-                    Employee.id = i;
+                    idEmployee = i;
                 }
 
             }
         }
-        System.out.println("Максимальная зарплата сотрудника " + employees[Employee.id].getSecondName() + " " + employees[Employee.id].getFirstName() + " " + employees[Employee.id].getLastName() + " составляет " + max + " рублей. ");
+        assert employees[idEmployee] != null;
+        System.out.println("Максимальная зарплата сотрудника " + employees[idEmployee].getSecondName() + " " + employees[idEmployee].getFirstName() + " " + employees[idEmployee].getLastName() + " составляет " + max + " рублей. ");
     }
 
     public static void showAvgSalaryCostsForMonth(Employee[] employees) {
@@ -60,7 +63,8 @@ public class EmployeeActions {
     public static void showFirstSecondLastName(Employee[] employees) {
         System.out.println("Список сотрудников:");
         for (Employee i : employees) {
-            System.out.println(i.secondName + " " + i.lastName + " " + i.lastName);
+            System.out.println(i.getSecondName() + " " + i.getFirstName() + " " + i.getLastName());
         }
     }
 }
+// by Igor
