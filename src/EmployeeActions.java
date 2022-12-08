@@ -18,30 +18,34 @@ public class EmployeeActions {
 
     public static void showMinSalaryEmployee(Employee[] employees) {
         int min = employees[0].getSalary();
+        int idEmployee = 0;
         for (int i = 0; i < employees.length; i++) {
             if (employees[i] != null) {
                 if (employees[i].getSalary() < min) {
                     min = employees[i].getSalary();
-                    Employee.idCount = i;
+                    idEmployee = i;
                 }
 
             }
         }
-        System.out.println("Минимальная зарплата сотрудника " + employees[Employee.idCount].getSecondName() + " " + employees[Employee.idCount].getFirstName() + " " + employees[Employee.idCount].getLastName() + " составляет " + min + " рублей. ");
+        assert employees[idEmployee] != null;
+        System.out.println("Минимальная зарплата сотрудника " + employees[idEmployee].getSecondName() + " " + employees[idEmployee].getFirstName() + " " + employees[idEmployee].getLastName() + " составляет " + min + " рублей. ");
     }
 
     public static void showMaxSalaryEmployee(Employee[] employees) {
         int max = employees[0].getSalary();
+        int idEmployee = 0;
         for (int i = 0; i < employees.length; i++) {
             if (employees[i] != null) {
                 if (employees[i].getSalary() > max) {
                     max = employees[i].getSalary();
-                    Employee.idCount = i;
+                    idEmployee = i;
                 }
 
             }
         }
-        System.out.println("Максимальная зарплата сотрудника " + employees[Employee.idCount].getSecondName() + " " + employees[Employee.idCount].getFirstName() + " " + employees[Employee.idCount].getLastName() + " составляет " + max + " рублей. ");
+        assert employees[idEmployee] != null;
+        System.out.println("Максимальная зарплата сотрудника " + employees[idEmployee].getSecondName() + " " + employees[idEmployee].getFirstName() + " " + employees[idEmployee].getLastName() + " составляет " + max + " рублей. ");
     }
 
     public static void showAvgSalaryCostsForMonth(Employee[] employees) {
